@@ -53,6 +53,35 @@
 # print(spam.lstrip())
 # print(spam.rstrip())
 # print(spam.strip('d'))
-import  pyperclip
-pyperclip.copy('Hello world')
-pyperclip.paste()
+# import  pyperclip
+# pyperclip.copy('Hello world')
+# pyperclip.paste()
+
+#6.4
+# import pyperclip,pprint
+# #粘贴 剪切板内容
+# text = pyperclip.paste()
+# pprint.pprint(text)
+# # 将多行文本按换行分割
+# lines = text.split('，')
+# # 遍历元素，字符串前面加*特殊符号
+# for item in lines:
+# 	item = '* '+item
+# 	pprint.pprint(item)
+# # 通过换行连接lines每个元素
+# text = '，'.join(lines)
+# pyperclip.copy(text)
+# pprint.pprint(text)
+
+#6.6 split 不传参数默认按空格来分割
+# print('Remember, remember, the fifth of November.'.split())
+
+#6.7
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+['Alice', 'Bob', 'Carol', 'David'],
+['dogs', 'cats', 'moose', 'goose']]
+for i in range(len(tableData[0])):
+	for item in tableData:
+		print(item[i],end='  ')
+	print()
+
