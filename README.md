@@ -1,2 +1,2 @@
-# python_basic
-python基础学习demo
+python_basic 
+python_basic demo

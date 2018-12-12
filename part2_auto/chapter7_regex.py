@@ -1,11 +1,11 @@
 #7.2.1
-# import re
-# phoneNumRegex = re.compile(r'1\d{2}\d{3}\d{3}')
-# text = phoneNumRegex.search('My phone Num is 18229099596')
-# print('Phone number is:'+text.group())
+import re
+phoneNumRegex = re.compile(r'1\d{2}\d{4}\d{4}')
+text = phoneNumRegex.search('My phone Num is 18229099596')
+print('Phone number is:'+text.group())
 
 #7.3.1  re:正则表达式库
-import re 
+# import re 
 # phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d)')
 # mo = phoneNumRegex.search('My number is 415-555-4242.')
 # print(mo.group(1))
@@ -106,6 +106,15 @@ import re
 
 #7.11 re.compile('',re.IGNORECASE) re.IGNORECASE或re.I 都表示忽略大小写
 
-#7.12 sub() 匹配到内容替换成指定字符串
-namesRegex = re.compile(r'Agent \w+')
-print()
+#7.12 sub() 匹配到内容替换成指定字符串(所有匹配都替换)
+# namesRegex = re.compile(r'Agent \w+')
+# print(namesRegex.sub('AgentSub','Agent Alice gave the secret documents to Agent Bob.'))
+# agentNamesRegex = re.compile(r'Agent (\w)\w*')
+# print(agentNamesRegex.findall('Agent Alice told Agent Carol that Agent Eve Knew Agent Bob was a double agent'))
+# print(agentNamesRegex.sub(r'\1****','Agent Alice told Agent Carol that Agent Eve Knew Agent Bob was a double agent'))
+
+#7.13  re.compile('',re.VERBOSE) 表示忽略表达式本身里面的空格、注释(用多行字符串书写表达式''')
+
+import re
+numberRegex = re.compile(r'(\d{1,3},\d{3})|\d{1,3}')
+print(numberRegex.search('2415,123').group())
